@@ -1,0 +1,8 @@
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+@use 'pages/page-center-view' as *;
+
+.sb-mygroups{
+  .sb-bg-color-white{
+    background: var(--sb-mygroups-bg) !important;
+  }
+}

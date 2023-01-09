@@ -1,0 +1,10 @@
+@use "~@project-sunbird/sb-styles/assets/mixins/mixins" as *;
+
+.no-result-container{
+    max-width: calculateRem(420px);
+    width:100%;
+    margin: 0 auto;
+    &__para{
+        color:var(--gray-800);
+    }
+}

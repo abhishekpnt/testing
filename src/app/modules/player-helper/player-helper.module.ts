@@ -1,0 +1,57 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SuiModule } from 'ng2-semantic-ui-v12';
+import { TelemetryModule } from '../telemetry/telemetry.module';
+import {
+  ContentCreditsComponent, PlayerComponent, ContentPlayerMetadataComponent,
+  FancyTreeComponent, CollectionPlayerMetadataComponent,
+  ContentRatingComponent, CommingSoonComponent,
+  CreditsAndLicenceComponent, ContentActionsComponent, ContentPlayerComponent,
+  ContentPlayerPageComponent, ContentChapterlistComponent, ContentLicenceComponent,
+  CurriculumInfoComponent, CourseInfoComponent
+} from './components';
+import { SharedModule } from '../shared/shared.module';
+import { CoreModule } from '../core/core.module';
+import { FormsModule } from '@angular/forms';
+import { CommonConsumptionModule } from '@project-sunbird/common-consumption';
+import {SunbirdPdfPlayerModule} from '@project-sunbird/sunbird-pdf-player-v9';
+import { SunbirdVideoPlayerModule } from '@project-sunbird/sunbird-video-player-v9';
+import { SunbirdEpubPlayerModule } from '@project-sunbird/sunbird-epub-player-v9';
+import { QumlPlayerService } from './service/quml-player/quml-player.service';
+import { QumlLibraryModule, QuestionCursor } from '@project-sunbird/sunbird-quml-player';
+import { EditorCursor } from '@project-sunbird/sunbird-collection-editor';
+
+
+
+@NgModule({
+  providers: [
+    { provide: QuestionCursor, useExisting: QumlPlayerService },
+    { provide: EditorCursor, useExisting: QumlPlayerService }
+  ],
+  imports: [
+    CommonModule,
+    SuiModule,
+    TelemetryModule,
+    SharedModule,
+    CoreModule,
+    FormsModule,
+    CommonConsumptionModule,
+    SunbirdPdfPlayerModule,
+    SunbirdVideoPlayerModule,
+    SunbirdEpubPlayerModule,
+   QumlLibraryModule
+  ],
+  declarations: [ContentCreditsComponent, PlayerComponent, ContentPlayerMetadataComponent,
+    FancyTreeComponent, CollectionPlayerMetadataComponent, ContentRatingComponent,
+    CommingSoonComponent, CreditsAndLicenceComponent, ContentActionsComponent,
+    ContentPlayerComponent, ContentPlayerPageComponent, ContentChapterlistComponent,
+    ContentLicenceComponent,
+    CurriculumInfoComponent,
+    CourseInfoComponent],
+  exports: [ContentCreditsComponent, PlayerComponent, ContentPlayerMetadataComponent,
+    FancyTreeComponent, CollectionPlayerMetadataComponent, ContentRatingComponent,
+    CommingSoonComponent, CreditsAndLicenceComponent, ContentActionsComponent,
+    ContentPlayerComponent, ContentPlayerPageComponent, ContentChapterlistComponent,
+    ContentLicenceComponent, CurriculumInfoComponent, CourseInfoComponent]
+})
+export class PlayerHelperModule { }
