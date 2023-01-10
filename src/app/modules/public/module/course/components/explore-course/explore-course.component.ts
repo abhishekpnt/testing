@@ -121,7 +121,7 @@ export class ExploreCourseComponent implements OnInit, OnDestroy, AfterViewInit 
             const channelIds = [];
             const facetsData = _.find(this.facets, { 'name': 'channel' });
             _.forEach(filterData.channel, (value, index) => {
-                const data = _.find(facetsData.values, { 'identifier': value });
+                const data = _.find(facetsData['values'], { 'identifier': value });
                 if (data) {
                     channelIds.push(data.name);
                 }

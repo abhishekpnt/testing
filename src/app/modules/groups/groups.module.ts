@@ -1,6 +1,6 @@
 import { TelemetryModule } from '../telemetry';
 import { GroupsRoutingModule } from './groups-routing.module';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { NgInviewModule } from '@stockopedia/angular-inport';
@@ -54,6 +54,7 @@ import { ActivityDashboardDirective } from './directive/activity-dashboard/activ
     ActivityDetailsComponent,
     ActivityDashboardDirective
     ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     exports: [ActivityDashboardDirective]
 })
 export class GroupsModule {

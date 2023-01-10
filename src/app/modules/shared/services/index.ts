@@ -15,6 +15,10 @@ export * from './discussion-telemetry/discussion-telemetry.service';
 export * from './content-utils/content-utils.service';
 export * from './window-scroll/window-scroll.service';
 export * from './exturl-util/exturl-util.service'
+export * from './navigate/router-navigation.service'
+export * from './on-demand-report/on-demand-report.service'
+
+
 
 
 

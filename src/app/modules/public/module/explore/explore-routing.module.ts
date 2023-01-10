@@ -8,32 +8,32 @@ const routes: Routes = [
   {
     path: '', loadChildren: () => import('../../../explore-page/explore-page.module').then((m) => {return m.ExplorePageModule}).catch( err => console.log('Oh no!', err) )
   },
-  {
-    path: 'view-all/:section/:pageNumber', component: ViewAllComponent,
-    data: {
-      telemetry: {
-        env: 'explore', pageid: 'view-all', type: 'view', subtype: 'paginate'
-      },
-      filterType: 'explore',
-      softConstraints: { badgeAssertions: 98, board: 99, channel: 100 },
-      applyMode: true
-    }
-  },
-  {
-    path: ':pageNumber', component: ExploreContentComponent, data: {
-      telemetry: {
-        env: 'explore', pageid: 'explore-search', type: 'view', subtype: 'paginate'
-      },
-      softConstraints: { badgeAssertions: 98, channel: 100 }
-    }
-  },
-  {
-    path: 'list/curriculum-courses', component: ExploreCurriculumCoursesComponent, data: {
-      telemetry: {
-        env: 'curriculum-courses', pageid: 'curriculum-courses', type: 'view', subtype: 'paginate'
-      },
-    }
-  }
+  // {
+  //   path: 'view-all/:section/:pageNumber', component: ViewAllComponent,
+  //   data: {
+  //     telemetry: {
+  //       env: 'explore', pageid: 'view-all', type: 'view', subtype: 'paginate'
+  //     },
+  //     filterType: 'explore',
+  //     softConstraints: { badgeAssertions: 98, board: 99, channel: 100 },
+  //     applyMode: true
+  //   }
+  // },
+  // {
+  //   path: ':pageNumber', component: ExploreContentComponent, data: {
+  //     telemetry: {
+  //       env: 'explore', pageid: 'explore-search', type: 'view', subtype: 'paginate'
+  //     },
+  //     softConstraints: { badgeAssertions: 98, channel: 100 }
+  //   }
+  // },
+  // {
+  //   path: 'list/curriculum-courses', component: ExploreCurriculumCoursesComponent, data: {
+  //     telemetry: {
+  //       env: 'curriculum-courses', pageid: 'curriculum-courses', type: 'view', subtype: 'paginate'
+  //     },
+  //   }
+  // }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

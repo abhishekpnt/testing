@@ -23,6 +23,8 @@ export * from './copy-content/copy-content.service';
 export * from './otp/otp.service'
 export * from './channel/channel.service'
 export * from './badges/badges.service'
+export * from './electron/electron.service'
+export * from './page-api/page-api.service'
 
 
 

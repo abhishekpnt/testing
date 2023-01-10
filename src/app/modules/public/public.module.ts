@@ -6,6 +6,7 @@ import { PublicPlayerService, LandingpageGuard, PendingchangesGuard } from './se
 import { SharedModule } from '../shared/shared.module';
 import { PublicRoutingModule } from './public-routing.module';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { CdnprefixPipe } from '../shared/pipes/cdnprefix.pipe';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +15,6 @@ import { DeviceDetectorService } from 'ngx-device-detector';
     PublicRoutingModule
   ],
   declarations: [LandingPageComponent],
-  providers: [PublicPlayerService, DeviceDetectorService, LandingpageGuard, PendingchangesGuard]
+  providers: [PublicPlayerService, DeviceDetectorService, LandingpageGuard, PendingchangesGuard,CdnprefixPipe]
 })
 export class PublicModule { }

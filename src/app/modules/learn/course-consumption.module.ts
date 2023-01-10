@@ -1,6 +1,6 @@
 import { TelemetryModule } from '../telemetry/telemetry.module';
 import { CourseConsumptionRoutingModule } from './course-consumption-routing.module';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { SharedFeatureModule } from '../shared-feature/shared-feature.module';
@@ -64,6 +64,7 @@ export const csNotificationServiceFactory = (csLibInitializerService: CsLibIniti
     DiscussionModule,
     GroupsModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     { provide: 'CS_USER_SERVICE', useFactory: csUserServiceFactory, deps: [CsLibInitializerService] },
     { provide: 'CS_COURSE_SERVICE', useFactory: csCourseServiceFactory, deps: [CsLibInitializerService] },
@@ -72,6 +73,6 @@ export const csNotificationServiceFactory = (csLibInitializerService: CsLibIniti
   ],
   declarations: [CoursePlayerComponent, CourseConsumptionHeaderComponent, AssessmentPlayerComponent,
     CourseConsumptionPageComponent, BatchDetailsComponent, CurriculumCardComponent, UnEnrollBatchComponent,
-    AssessmentPlayerComponent, CourseCompletionComponent, CourseDetailsComponent, CertificateNameUpdatePopupComponent]
+    AssessmentPlayerComponent, CourseCompletionComponent, CourseDetailsComponent, CertificateNameUpdatePopupComponent],
 })
 export class CourseConsumptionModule { }
